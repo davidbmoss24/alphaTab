@@ -41,6 +41,7 @@ export class RenderingResources {
         [NotationElement.EffectChordNames, new Font(RenderingResources._sansFont, 22, FontStyle.Plain, FontWeight.Bold)],
         [NotationElement.EffectText, RenderingResources._effectFont],
         [NotationElement.EffectUnderText, new Font(RenderingResources._sansFont, 17, FontStyle.Plain, FontWeight.Regular)],
+        [NotationElement.EffectFingerText, new Font(RenderingResources._serifFont, 17, FontStyle.Plain, FontWeight.Regular)],
         [NotationElement.EffectPalmMute, RenderingResources._effectFont],
         [NotationElement.EffectLetRing, RenderingResources._effectFont],
         [NotationElement.EffectBeatBarre, RenderingResources._effectFont],

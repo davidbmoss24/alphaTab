@@ -387,7 +387,12 @@ export enum NotationElement {
     /**
      * The additional beat text shown below the staff.
      */
-    EffectUnderText = 58
+    EffectUnderText = 58,
+
+    /**
+     * The finger text shown above the staff.
+     */
+    EffectFingerText = 59
 }
 
 /**

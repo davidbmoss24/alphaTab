@@ -398,6 +398,16 @@ export class Beat {
     public underTextSize: number = 0;
 
     /**
+     * Gets or sets the finger text annotation shown above this beat.
+     */
+    public fingerText: string | null = null;
+
+    /**
+     * Gets or sets the font size for the finger text annotation shown above this beat.
+     */
+    public fingerTextSize: number = 0;
+
+    /**
      * Gets or sets a value indicating whether the beat is played in rasgueado style.
      */
     public get hasRasgueado(): boolean {

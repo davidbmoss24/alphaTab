@@ -1616,6 +1616,13 @@ export class AlphaTex1LanguageHandler implements IAlphaTexLanguageImportHandler 
             case 'txt':
                 beat.text = (p.arguments!.arguments[0] as AlphaTexTextNode).text;
                 return ApplyNodeResult.Applied;
+            case 'ft':
+            case 'fingertext':
+                beat.fingerText = (p.arguments!.arguments[0] as AlphaTexTextNode).text;
+                return ApplyNodeResult.Applied;
+            case 'fts':
+                beat.fingerTextSize = (p.arguments!.arguments[0] as AlphaTexNumberLiteral).value;
+                return ApplyNodeResult.Applied;
             case 'ut':
             case 'under':
                 beat.underText = (p.arguments!.arguments[0] as AlphaTexTextNode).text;
@@ -3465,6 +3472,13 @@ export class AlphaTex1LanguageHandler implements IAlphaTexLanguageImportHandler 
 
         if (beat.text != null) {
             Atnf.prop(properties, 'txt', Atnf.stringValue(beat.text));
+        }
+
+        if (beat.fingerText != null) {
+            Atnf.prop(properties, 'ft', Atnf.stringValue(beat.fingerText));
+        }
+        if (beat.fingerTextSize > 0) {
+            Atnf.prop(properties, 'fts', Atnf.numberValue(beat.fingerTextSize));
         }
 
         if (beat.underText != null) {

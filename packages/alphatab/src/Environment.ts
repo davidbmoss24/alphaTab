@@ -36,6 +36,7 @@ import { DirectionsEffectInfo } from '@coderline/alphatab/rendering/effects/Dire
 import { DynamicsEffectInfo } from '@coderline/alphatab/rendering/effects/DynamicsEffectInfo';
 import { FadeEffectInfo } from '@coderline/alphatab/rendering/effects/FadeEffectInfo';
 import { FermataEffectInfo } from '@coderline/alphatab/rendering/effects/FermataEffectInfo';
+import { FingerTextEffectInfo } from '@coderline/alphatab/rendering/effects/FingerTextEffectInfo';
 import { FingeringEffectInfo } from '@coderline/alphatab/rendering/effects/FingeringEffectInfo';
 import { FreeTimeEffectInfo } from '@coderline/alphatab/rendering/effects/FreeTimeEffectInfo';
 import { GolpeEffectInfo } from '@coderline/alphatab/rendering/effects/GolpeEffectInfo';
@@ -530,6 +531,7 @@ export class Environment {
         // Tabs
         new TabBarRendererFactory([
             { effect: new LyricsEffectInfo(), mode: EffectBandMode.SharedTop },
+            { effect: new FingerTextEffectInfo(), mode: EffectBandMode.OwnedTop },
 
             { effect: new TabWhammyEffectInfo(), mode: EffectBandMode.OwnedTop },
             { effect: new TrillEffectInfo(), mode: EffectBandMode.OwnedTop },
