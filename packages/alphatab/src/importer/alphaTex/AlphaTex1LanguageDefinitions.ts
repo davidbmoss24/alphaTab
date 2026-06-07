@@ -664,6 +664,8 @@ export class AlphaTex1LanguageDefinitions {
             ]
         ],
         ['txt', [[[[17, 10], 0]]]],
+        ['ut', [[[[17, 10], 0]]]],
+        ['under', [[[[17, 10], 0]]]],
         [
             'lyrics',
             [

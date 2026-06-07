@@ -61,6 +61,7 @@ import { TempoEffectInfo } from '@coderline/alphatab/rendering/effects/TempoEffe
 import { TextEffectInfo } from '@coderline/alphatab/rendering/effects/TextEffectInfo';
 import { TrillEffectInfo } from '@coderline/alphatab/rendering/effects/TrillEffectInfo';
 import { TripletFeelEffectInfo } from '@coderline/alphatab/rendering/effects/TripletFeelEffectInfo';
+import { UnderTextEffectInfo } from '@coderline/alphatab/rendering/effects/UnderTextEffectInfo';
 import { WahPedalEffectInfo } from '@coderline/alphatab/rendering/effects/WahPedalEffectInfo';
 import { WhammyBarEffectInfo } from '@coderline/alphatab/rendering/effects/WhammyBarEffectInfo';
 import { WideBeatVibratoEffectInfo } from '@coderline/alphatab/rendering/effects/WideBeatVibratoEffectInfo';
@@ -560,7 +561,8 @@ export class Environment {
                 effect: new GolpeEffectInfo(GolpeType.Thumb),
                 mode: EffectBandMode.OwnedBottom,
                 shouldCreate: staff => !staff.showStandardNotation
-            }
+            },
+            { effect: new UnderTextEffectInfo(), mode: EffectBandMode.OwnedBottom }
         ])
     ];
 

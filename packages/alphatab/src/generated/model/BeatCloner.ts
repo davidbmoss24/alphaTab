@@ -33,6 +33,7 @@ export class BeatCloner {
         clone.dots = original.dots;
         clone.fade = original.fade;
         clone.lyrics = original.lyrics ? original.lyrics.slice() : null;
+        clone.underText = original.underText;
         clone.pop = original.pop;
         clone.slap = original.slap;
         clone.tap = original.tap;

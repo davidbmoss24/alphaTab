@@ -359,6 +359,11 @@ export enum NotationElement {
     ChordDiagramFretboardNumbers = 52,
 
     /**
+     * The additional beat text shown below the staff.
+     */
+    EffectUnderText = 53,
+
+    /**
      * The bar numbers.
      */
     BarNumber = 53,

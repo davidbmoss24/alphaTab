@@ -388,6 +388,11 @@ export class Beat {
     public lyrics: string[] | null = null;
 
     /**
+     * Gets or sets the text annotation shown below this beat.
+     */
+    public underText: string | null = null;
+
+    /**
      * Gets or sets a value indicating whether the beat is played in rasgueado style.
      */
     public get hasRasgueado(): boolean {
