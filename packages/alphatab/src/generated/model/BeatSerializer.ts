@@ -59,6 +59,7 @@ export class BeatSerializer {
         o.set("fade", obj.fade as number);
         o.set("lyrics", obj.lyrics);
         o.set("undertext", obj.underText);
+        o.set("undertextsize", obj.underTextSize);
         o.set("pop", obj.pop);
         o.set("slap", obj.slap);
         o.set("tap", obj.tap);
@@ -150,6 +151,9 @@ export class BeatSerializer {
                 return true;
             case "undertext":
                 obj.underText = v as string | null;
+                return true;
+            case "undertextsize":
+                obj.underTextSize = v! as number;
                 return true;
             case "pop":
                 obj.pop = v! as boolean;

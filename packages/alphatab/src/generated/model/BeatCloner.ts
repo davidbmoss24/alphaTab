@@ -34,6 +34,7 @@ export class BeatCloner {
         clone.fade = original.fade;
         clone.lyrics = original.lyrics ? original.lyrics.slice() : null;
         clone.underText = original.underText;
+        clone.underTextSize = original.underTextSize;
         clone.pop = original.pop;
         clone.slap = original.slap;
         clone.tap = original.tap;

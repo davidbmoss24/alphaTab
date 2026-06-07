@@ -1620,6 +1620,9 @@ export class AlphaTex1LanguageHandler implements IAlphaTexLanguageImportHandler 
             case 'under':
                 beat.underText = (p.arguments!.arguments[0] as AlphaTexTextNode).text;
                 return ApplyNodeResult.Applied;
+            case 'uts':
+                beat.underTextSize = (p.arguments!.arguments[0] as AlphaTexNumberLiteral).value;
+                return ApplyNodeResult.Applied;
             case 'lyrics':
                 let lyricsLine = 0;
                 let lyricsText = '';
@@ -3466,6 +3469,9 @@ export class AlphaTex1LanguageHandler implements IAlphaTexLanguageImportHandler 
 
         if (beat.underText != null) {
             Atnf.prop(properties, 'ut', Atnf.stringValue(beat.underText));
+        }
+        if (beat.underTextSize > 0) {
+            Atnf.prop(properties, 'uts', Atnf.numberValue(beat.underTextSize));
         }
 
         if (beat.lyrics != null && beat.lyrics!.length > 0) {

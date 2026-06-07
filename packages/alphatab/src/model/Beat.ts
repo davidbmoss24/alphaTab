@@ -393,6 +393,11 @@ export class Beat {
     public underText: string | null = null;
 
     /**
+     * Gets or sets the font size for the text annotation shown below this beat.
+     */
+    public underTextSize: number = 0;
+
+    /**
      * Gets or sets a value indicating whether the beat is played in rasgueado style.
      */
     public get hasRasgueado(): boolean {

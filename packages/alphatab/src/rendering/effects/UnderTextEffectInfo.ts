@@ -1,4 +1,5 @@
 import type { Beat } from '@coderline/alphatab/model/Beat';
+import { Font } from '@coderline/alphatab/model/Font';
 import { NotationElement } from '@coderline/alphatab/NotationSettings';
 import { TextAlign } from '@coderline/alphatab/platform/ICanvas';
 import type { BarRendererBase } from '@coderline/alphatab/rendering/BarRendererBase';
@@ -43,11 +44,15 @@ export class UnderTextEffectInfo extends EffectInfo {
     }
 
     public createNewGlyph(renderer: BarRendererBase, beat: Beat): EffectGlyph {
+        const baseFont = renderer.resources.elementFonts.get(NotationElement.EffectUnderText)!;
+        const font = beat.underTextSize > 0
+            ? Font.withFamilyList(baseFont.families, beat.underTextSize, baseFont.style, baseFont.weight)
+            : baseFont;
         return new UnderTextGlyph(
             0,
             0,
             beat.underText!,
-            renderer.resources.elementFonts.get(NotationElement.EffectUnderText)!,
+            font,
             TextAlign.Center
         );
     }
