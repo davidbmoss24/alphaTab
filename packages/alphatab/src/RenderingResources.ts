@@ -38,7 +38,7 @@ export class RenderingResources {
         [NotationElement.EffectLyrics, RenderingResources._effectFont],
         [NotationElement.EffectTap, RenderingResources._effectFont],
         [NotationElement.ChordDiagrams, RenderingResources._effectFont],
-        [NotationElement.EffectChordNames, RenderingResources._effectFont],
+        [NotationElement.EffectChordNames, new Font(RenderingResources._sansFont, 22, FontStyle.Plain, FontWeight.Bold)],
         [NotationElement.EffectText, RenderingResources._effectFont],
         [NotationElement.EffectPalmMute, RenderingResources._effectFont],
         [NotationElement.EffectLetRing, RenderingResources._effectFont],
