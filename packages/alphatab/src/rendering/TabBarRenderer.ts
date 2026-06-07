@@ -1,5 +1,6 @@
 import { BarSubElement } from '@coderline/alphatab/model/Bar';
 import { type Beat, BeatSubElement } from '@coderline/alphatab/model/Beat';
+import { Duration } from '@coderline/alphatab/model/Duration';
 import { GraceType } from '@coderline/alphatab/model/GraceType';
 import type { Note } from '@coderline/alphatab/model/Note';
 import type { Voice } from '@coderline/alphatab/model/Voice';
@@ -273,6 +274,10 @@ export class TabBarRenderer extends LineBarRenderer {
         bottomY: number,
         canvas: ICanvas
     ) {
+        if (this.rhythmMode === TabRhythmMode.ShowWithBars && beat.duration === Duration.Quarter) {
+            return;
+        }
+
         if (bottomY < topY) {
             const t = bottomY;
             bottomY = topY;
