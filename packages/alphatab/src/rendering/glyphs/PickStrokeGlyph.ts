@@ -7,6 +7,8 @@ import { MusicFontGlyph } from '@coderline/alphatab/rendering/glyphs/MusicFontGl
  * @internal
  */
 export class PickStrokeGlyph extends MusicFontGlyph {
+    private static readonly _guitarWithJimmyLowering = 7;
+
     public constructor(x: number, y: number, pickStroke: PickStroke) {
         super(x, y, EngravingSettings.GraceScale, PickStrokeGlyph._getSymbol(pickStroke));
         this.center = true;
@@ -14,7 +16,7 @@ export class PickStrokeGlyph extends MusicFontGlyph {
 
     public override doLayout(): void {
         super.doLayout();
-        this.offsetY = this.height;
+        this.offsetY = this.height + PickStrokeGlyph._guitarWithJimmyLowering;
     }
 
     private static _getSymbol(pickStroke: PickStroke): MusicFontSymbol {
