@@ -8,6 +8,16 @@ import type { EffectGlyph } from '@coderline/alphatab/rendering/glyphs/EffectGly
 import { TextGlyph } from '@coderline/alphatab/rendering/glyphs/TextGlyph';
 import type { Settings } from '@coderline/alphatab/Settings';
 
+class UnderTextGlyph extends TextGlyph {
+    private static readonly _topPadding = 7;
+
+    public override doLayout(): void {
+        super.doLayout();
+        this.y += UnderTextGlyph._topPadding;
+        this.height += UnderTextGlyph._topPadding;
+    }
+}
+
 /**
  * @internal
  */
@@ -33,7 +43,7 @@ export class UnderTextEffectInfo extends EffectInfo {
     }
 
     public createNewGlyph(renderer: BarRendererBase, beat: Beat): EffectGlyph {
-        return new TextGlyph(
+        return new UnderTextGlyph(
             0,
             0,
             beat.underText!,
