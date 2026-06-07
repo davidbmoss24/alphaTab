@@ -33,6 +33,7 @@ export class NotationSettingsSerializer {
                 m.set(k.toString(), v);
             }
         }
+        o.set("showtabnotesontiednotes", obj.showTabNotesOnTiedNotes);
         o.set("rhythmmode", obj.rhythmMode as number);
         o.set("rhythmheight", obj.rhythmHeight);
         o.set("transpositionpitches", obj.transpositionPitches);
@@ -56,6 +57,9 @@ export class NotationSettingsSerializer {
                 JsonHelper.forEach(v, (v, k) => {
                     obj.elements.set(JsonHelper.parseEnum<NotationElement>(k, NotationElement)!, v as boolean);
                 });
+                return true;
+            case "showtabnotesontiednotes":
+                obj.showTabNotesOnTiedNotes = v! as boolean;
                 return true;
             case "rhythmmode":
                 obj.rhythmMode = JsonHelper.parseEnum<TabRhythmMode>(v, TabRhythmMode)!;

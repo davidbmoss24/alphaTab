@@ -117,6 +117,14 @@ export interface NotationSettingsJson {
      */
     elements?: Map<NotationElement | keyof typeof NotationElement | Lowercase<keyof typeof NotationElement>, boolean>;
     /**
+     * If set to true, tied destination notes are rendered in tablature using
+     * the originating fret number instead of being hidden.
+     *
+     * Guitar With Jimmy uses this for chord/rhythm exercises where the printed
+     * book keeps the sustaining tied chord visible in the tab staff.
+     */
+    showTabNotesOnTiedNotes?: boolean;
+    /**
      * Controls how the rhythm notation is rendered for tab staves.
      * @since 0.9.6
      * @category Notation

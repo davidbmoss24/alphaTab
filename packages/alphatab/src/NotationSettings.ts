@@ -497,6 +497,15 @@ export class NotationSettings {
     public elements: Map<NotationElement, boolean> = new Map();
 
     /**
+     * If set to true, tied destination notes are rendered in tablature using
+     * the originating fret number instead of being hidden.
+     *
+     * Guitar With Jimmy uses this for chord/rhythm exercises where the printed
+     * book keeps the sustaining tied chord visible in the tab staff.
+     */
+    public showTabNotesOnTiedNotes: boolean = true;
+
+    /**
      * Gets the default configuration of the {@see notationElements} setting. Do not modify
      * this map as it might not result in the expected side effects.
      * If items are not listed explicitly in this list, they are considered visible.

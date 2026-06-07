@@ -59,6 +59,8 @@ export class NoteNumberGlyph extends Glyph {
                 }
                 this._noteString = `<${this._noteString}>`;
             }
+        } else if (n.tieOrigin && this.renderer.settings.notation.showTabNotesOnTiedNotes) {
+            this._noteString = (n.tieOrigin.fret - n.beat.voice.bar.staff.transpositionPitch).toString();
         } else if (
             (n.beat.index === 0 && this.renderer.settings.notation.notationMode === NotationMode.GuitarPro) ||
             ((n.bendType === BendType.Bend || n.bendType === BendType.BendRelease) &&
