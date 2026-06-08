@@ -7,7 +7,7 @@ import { MusicFontGlyph } from '@coderline/alphatab/rendering/glyphs/MusicFontGl
  * @internal
  */
 export class PickStrokeGlyph extends MusicFontGlyph {
-    private static readonly _guitarWithJimmyLowering = 15;
+    private static readonly _guitarWithJimmyLowering = 11;
 
     public constructor(x: number, y: number, pickStroke: PickStroke) {
         super(x, y, EngravingSettings.GraceScale, PickStrokeGlyph._getSymbol(pickStroke));
