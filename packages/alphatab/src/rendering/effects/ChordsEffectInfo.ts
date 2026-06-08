@@ -11,13 +11,18 @@ import { NotationElement } from '@coderline/alphatab/NotationSettings';
 import { ChordDiagramGlyph } from '@coderline/alphatab/rendering/glyphs/ChordDiagramGlyph';
 
 class GuitarWithJimmyChordNameGlyph extends TextGlyph {
-    private static readonly _lift = 18;
     public static readonly font = new Font('Arial, sans-serif', 22, FontStyle.Plain, FontWeight.Bold);
+    private readonly _lift: number;
+
+    public constructor(x: number, y: number, text: string, lift: number) {
+        super(x, y, text, GuitarWithJimmyChordNameGlyph.font, TextAlign.Center);
+        this._lift = lift;
+    }
 
     public override doLayout(): void {
         super.doLayout();
-        this.y -= GuitarWithJimmyChordNameGlyph._lift;
-        this.height += GuitarWithJimmyChordNameGlyph._lift;
+        this.y -= this._lift;
+        this.height += this._lift;
     }
 }
 
@@ -47,15 +52,11 @@ export class ChordsEffectInfo extends EffectInfo {
 
     public createNewGlyph(renderer: BarRendererBase, beat: Beat): EffectGlyph {
         const showDiagram = beat.voice.bar.staff.track.score.stylesheet.globalDisplayChordDiagramsInScore;
+        const displaySettings = renderer.settings.display as unknown as { gwjChordNameLift?: number };
+        const lift = displaySettings.gwjChordNameLift ?? 18;
         return showDiagram
             ? new ChordDiagramGlyph(0, 0, beat.chord!, NotationElement.EffectChordNames, true)
-            : new GuitarWithJimmyChordNameGlyph(
-                  0,
-                  0,
-                  beat.chord!.name,
-                  GuitarWithJimmyChordNameGlyph.font,
-                  TextAlign.Center
-              );
+            : new GuitarWithJimmyChordNameGlyph(0, 0, beat.chord!.name, lift);
     }
 
     public canExpand(_from: Beat, _to: Beat): boolean {
