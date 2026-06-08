@@ -22,7 +22,7 @@ class GuitarWithJimmyChordNameGlyph extends TextGlyph {
     public override doLayout(): void {
         super.doLayout();
         this.y -= this._lift;
-        this.height += this._lift;
+        this.height += Math.max(0, this._lift);
     }
 }
 
